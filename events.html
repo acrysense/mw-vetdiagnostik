@@ -23,16 +23,76 @@
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
 
-<body>
+<body style="background: #1E2C48;">
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!-- header -->
 		<header class="header" id="header">
-			<div class="container"></div>
+			<div class="container">
+				<div class="header__wrapper">
+					<a href="index.html" class="header__logotype">
+						<picture class="header__logotype-img">
+							<source srcset="img/logotype.svg" media="(min-width: 768px)">
+							<img src="img/logotype-circle.svg" width="71" height="35" alt="vetdiagnostik">
+						</picture>
+					</a>
+					<nav class="nav header__nav">
+						<ul class="nav__list">
+							<li class="nav__item">
+								<a href="research.html" class="nav__link">Исследования</a>
+							</li>
+							<li class="nav__item">
+								<a href="cooperation.html" class="nav__link">Сотрудничество</a>
+							</li>
+							<li class="nav__item">
+								<a href="events.html" class="nav__link">События</a>
+							</li>
+							<li class="nav__item">
+								<a href="articles.html" class="nav__link">Статьи</a>
+							</li>
+							<li class="nav__item">
+								<a href="contacts.html" class="nav__link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="c-socnav header__socnav">
+						<ul class="c-socnav__list">
+							<li class="c-socnav__item">
+								<a href="#" class="c-socnav__link">
+									<svg class="c-socnav__icon">
+										<use xlink:href="img/sprite.svg#icon-tg"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="c-socnav__item">
+								<a href="#" class="c-socnav__link">
+									<svg class="c-socnav__icon">
+										<use xlink:href="img/sprite.svg#icon-vk"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="c-search header__search">
+						<button class="c-search__trigger">
+							<svg>
+								<use xlink:href="img/sprite.svg#icon-search"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
 		</header>
 		<!-- end of header -->
 		<!-- content -->
-		<div class="wrapper__content"></div>
+		<div class="wrapper__content">
+			<!-- events -->
+			<div class="events" id="events">
+				<div class="container">
+				</div>
+			</div>
+			<!-- end of events -->
+		</div>
 		<!-- end of content -->
 		<!-- footer -->
 		<footer class="footer" id="footer">
