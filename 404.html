@@ -31,11 +31,24 @@
 			<!-- not found -->
 			<div class="not-found" id="not-found">
 				<div class="container">
+					<div class="not-found__main">
+						<picture class="not-found__img">
+							<img src="img/404.png" alt="404">
+						</picture>
+						<picture class="not-found__decor">
+							<img src="img/404-object.png" alt="Image">
+						</picture>
+						<div class="not-found__body">
+							<span class="not-found__title">Страница не найдена</span>
+							<a href="index.html" class="not-found__btn btn">На главную</a>
+						</div>
+						<span class="not-found__help">Упс... <br>найден артефакт</span>
+					</div>
 					<div class="not-found__info">
 						<p class="not-found__copyright">
 							Возникли <br>
 							проблемы со страницей?<br>
-							Напишите нам ↓
+							Напишите нам <br>↓
 						</p>
 						<a href="mosco-web.ru" class="not-found__author">
 							<img src="img/moscoweb.svg" width="113" height="18" alt="MOSCOWEB">
@@ -54,7 +67,7 @@
 	</div>
 	<!-- end of menu -->
 	<!-- scripts -->
-	<script src="js/vendor.min.js"></script>
+	<script type="module" src="js/vendor.min.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 

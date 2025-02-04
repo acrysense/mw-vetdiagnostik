@@ -5,11 +5,11 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ВетДиагностик - Полный спектр ветеринарных исследований </title>
-	<meta property="og:title" content="ВетДиагностик - Полный спектр ветеринарных исследований ">
+	<title>ВетДиагностик - Полный спектр ветеринарных исследований</title>
+	<meta property="og:title" content="ВетДиагностик - Полный спектр ветеринарных исследований">
 	<meta property="og:description" content="Описание">
 	<meta property="og:url" content="/">
-	<meta property="og:site_name" content="ВетДиагностик - Полный спектр ветеринарных исследований ">
+	<meta property="og:site_name" content="ВетДиагностик - Полный спектр ветеринарных исследований">
 	<!-- favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
@@ -32,7 +32,7 @@
 				<div class="header__wrapper">
 					<a href="index.html" class="header__logotype">
 						<picture class="header__logotype-img">
-							<source srcset="img/logotype.svg" media="(min-width: 768px)">
+							<source srcset="img/logotype.svg" media="(min-width: 1024px)">
 							<img src="img/logotype-circle.svg" width="71" height="35" alt="vetdiagnostik">
 						</picture>
 					</a>
@@ -80,6 +80,7 @@
 							</svg>
 						</button>
 					</div>
+					<button class="hamburger" id="hamburger-toggle">Меню</button>
 				</div>
 			</div>
 		</header>
@@ -174,7 +175,7 @@
 							</svg>
 							<span class="research-card__title">Скачать <br>направление 1</span>
 							<picture class="research-card__bg">
-								<img src="img/research-dir-1.jpg" alt="Image">
+								<img src="img/research-dir-01.jpg" alt="Image">
 							</picture>
 						</a>
 						<a href="#" class="research-card research__item" data-bg-color="#1E2C48">
@@ -183,7 +184,7 @@
 							</svg>
 							<span class="research-card__title">Скачать <br>направление 2</span>
 							<picture class="research-card__bg">
-								<img src="img/research-dir-2.jpg" alt="Image">
+								<img src="img/research-dir-02.jpg" alt="Image">
 							</picture>
 						</a>
 						<a href="#" class="research-card research__item" data-bg-color="#1E2C48">
@@ -192,7 +193,7 @@
 							</svg>
 							<span class="research-card__title">Скачать <br>направление 3</span>
 							<picture class="research-card__bg">
-								<img src="img/research-dir-3.jpg" alt="Image">
+								<img src="img/research-dir-03.jpg" alt="Image">
 							</picture>
 						</a>
 					</div>
@@ -206,11 +207,17 @@
 				</div>
 			</div>
 			<!-- end of research -->
+			<div class="wrapper__bg">
+				<video src="black-bg.mp4" autoplay loop></video>
+			</div>
 		</div>
 		<!-- end of content -->
 		<!-- footer -->
 		<footer class="footer" id="footer">
-			<div class="container"></div>
+			<div class="container">
+				<div class="footer__top"></div>
+				<div class="footer__wrap"></div>
+			</div>
 		</footer>
 		<!-- end of footer -->
 	</div>
@@ -221,7 +228,7 @@
 	</div>
 	<!-- end of menu -->
 	<!-- scripts -->
-	<script src="js/vendor.min.js"></script>
+	<script type="module" src="js/vendor.min.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 

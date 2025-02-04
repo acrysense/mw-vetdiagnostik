@@ -23,16 +23,16 @@
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
 
-<body>
+<body style="background: #060606;">
 	<!-- wrapper -->
-	<div class="wrapper">
+	<div class="wrapper" style="min-height: 5000px;">
 		<!-- header -->
 		<header class="header" id="header">
 			<div class="container">
 				<div class="header__wrapper">
 					<a href="index.html" class="header__logotype">
 						<picture class="header__logotype-img">
-							<source srcset="img/logotype.svg" media="(min-width: 768px)">
+							<source srcset="img/logotype.svg" media="(min-width: 1024px)">
 							<img src="img/logotype-circle.svg" width="71" height="35" alt="vetdiagnostik">
 						</picture>
 					</a>
@@ -80,16 +80,22 @@
 							</svg>
 						</button>
 					</div>
+					<button class="hamburger" id="hamburger-toggle">Меню</button>
 				</div>
 			</div>
 		</header>
 		<!-- end of header -->
 		<!-- content -->
-		<div class="wrapper__content"></div>
+		<div class="wrapper__content">
+			<div id="scene-container" style="position: fixed; top: 0;"></div>
+		</div>
 		<!-- end of content -->
 		<!-- footer -->
 		<footer class="footer" id="footer">
-			<div class="container"></div>
+			<div class="container">
+				<div class="footer__top"></div>
+				<div class="footer__wrap"></div>
+			</div>
 		</footer>
 		<!-- end of footer -->
 	</div>
@@ -100,8 +106,115 @@
 	</div>
 	<!-- end of menu -->
 	<!-- scripts -->
-	<script src="js/vendor.min.js"></script>
+	<script type="module" src="js/vendor.min.js"></script>
 	<script src="js/app.min.js"></script>
+	<script type="module">
+		import * as THREE from './js/three.module.js';
+		import {
+			GLTFLoader
+		} from './js/GLTFLoader.js';
+		import {
+			DRACOLoader
+		} from './js/DRACOLoader.js';
+
+		const scene = new THREE.Scene();
+		const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+		const renderer = new THREE.WebGLRenderer();
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		document.body.appendChild(renderer.domElement);
+
+		const loader = new GLTFLoader();
+
+		loader.load('model.glb', function(gltf) {
+			scene.add(gltf.scene);
+			camera.position.set(0, 1, 3);
+			animate();
+		});
+
+		function animate() {
+			requestAnimationFrame(animate);
+			renderer.render(scene, camera);
+		}
+	</script>
+	<!-- <script>
+        const scene = new THREE.Scene();
+
+        // Камера
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(20, 0, 0); // Камера отодвинута для лучшего обзора
+        camera.rotation.set(0, 90, 0); 
+        // camera.zoom = 4;
+        // camera.lookAt(0, 0, 0);       // Камера смотрит в центр сцены
+
+        // Рендерер с антиалиасингом для лучшего качества
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio); // Подстройка для высокого качества на экранах с высокой плотностью пикселей
+        document.body.appendChild(renderer.domElement);
+
+        // renderer.shadowMap.enabled = true;
+        // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+
+        // Освещение
+        // const light = new THREE.DirectionalLight(0xffffff, 2); // Увеличенная яркость
+        // light.position.set(5, 10, 7.5); // Направление света
+        // scene.add(light);
+
+        // const ambientLight = new THREE.AmbientLight(0xffffff, 1); // Мягкий свет
+        // scene.add(ambientLight);
+
+        const light1 = new THREE.PointLight(0xffffff, 2000, 100); 
+        light1.position.set(3.763, 1.832, 4.719)
+        scene.add(light1);
+
+        // Загрузка модели
+        const loader = new THREE.GLTFLoader();
+
+        // Подключаем DRACOLoader
+        const dracoLoader = new THREE.DRACOLoader();
+        dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+        loader.setDRACOLoader(dracoLoader);
+
+        let model;
+        loader.load(
+            'scope3.1.glb', // Путь к модели
+            (gltf) => {
+                model = gltf.scene;
+                model.position.set(0, -0.808, -1.988); // Размещаем в центре
+                model.scale.set(0.179, 0.179, 0.179);     // Увеличиваем модель
+                scene.add(model);
+            },
+            (xhr) => console.log(`Загружено ${(xhr.loaded / xhr.total) * 100}%`),
+            (error) => console.error('Ошибка загрузки модели:', error)
+        );
+
+        // Анимация
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Обработчик изменения размера окна
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Обработчик скролла
+        window.addEventListener('scroll', () => {
+            if (model) {
+                // Получаем текущую прокрутку страницы
+                const scrollY = window.scrollY;
+
+                // Изменяем позицию объекта по оси Z в зависимости от прокрутки
+                // model.position.z = 1 - scrollY * 0.002; // Позиция будет изменяться на основе прокрутки
+                // model.position.x = 1 - scrollY * 0.002; // Позиция будет изменяться на основе прокрутки
+            }
+        });
+    </script> -->
 </body>
 
 </html>
