@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
 
-<body style="background: #1E2C48;">
+<body style="--page-color: 30, 44, 72;">
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!-- header -->
@@ -91,7 +91,12 @@
 			<div class="research" id="research">
 				<div class="container">
 					<div class="research__top">
-						<h1 class="research__heading"><b>Полный спектр</b> ветеринарных <span>исследований</span></h1>
+						<h1 class="research__heading">
+							<b>Полный спектр</b>
+							<span>
+								ветеринарных <span>исследований</span>
+							</span>
+						</h1>
 					</div>
 					<div class="research__wrapper">
 						<a href="#" class="research-card research__item" data-bg-color="#481F1E">
@@ -208,15 +213,60 @@
 			</div>
 			<!-- end of research -->
 			<div class="wrapper__bg">
-				<video src="black-bg.mp4" autoplay loop></video>
+				<video poster="" loop autoplay muted playsinline>
+					<source src="video/black-bg.mp4" type="video/mp4">
+				</video>
 			</div>
 		</div>
 		<!-- end of content -->
 		<!-- footer -->
 		<footer class="footer" id="footer">
 			<div class="container">
-				<div class="footer__top"></div>
-				<div class="footer__wrap"></div>
+				<div class="footer__top">
+					<div class="footer-socnav footer__socnav"></div>
+				</div>
+				<div class="footer__wrap">
+					<div class="footer__wrapper">
+						<div class="footer__left">
+							<span class="footer__title">Диагностика, <span>которой доверяют <br>профессионалы</span></span>
+							<address class="footer__address">Санкт-Петербург <br>ул. Дрезденская <br>8, корп. 2</address>
+						</div>
+						<div class="footer__right">
+							<div class="footer-info footer__info">
+								<div class="footer-info__wrapper">
+									<div class="footer-info__content">
+										<p>Главное событие года <b>Vet Infect 2024</b> Мы ждем вас, чтобы вместе сделать ветеринарную медицину еще&nbsp;лучше! </p>
+									</div>
+									<div class="footer-info__main">
+										<picture class="footer-info__img">
+											<img src="img/qr-code.svg" alt="Image">
+										</picture>
+										<div class="footer-info__body">
+											<a href="#" class="footer-info__link">
+												<span>Узнать подробнее</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="footer__contacts">
+								<div class="footer__btns">
+									<a href="tel:88004441204" class="footer__btn btn btn--border">8 (800) 444-12-04</a>
+									<a href="mailto:info@vetdiagnostik.ru" class="footer__btn btn btn--border">info@vetdiagnostik.ru</a>
+								</div>
+								<div class="footer__inner">
+									<p class="footer__copyright">© 2024 ВетДиагностик</p>
+									<a href="https://mosco-web.ru/" class="footer__author" target="_blank">
+										<img src="img/moscoweb-black.svg" alt="moscoweb">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<picture class="footer__img">
+						<img src="img/footer-01.png" alt="Image">
+					</picture>
+				</div>
 			</div>
 		</footer>
 		<!-- end of footer -->

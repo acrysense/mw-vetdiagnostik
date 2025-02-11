@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
 
-<body style="background: #1B1C1F;">
+<body style="--page-color: 30, 44, 72;">
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!-- content -->
@@ -40,7 +40,7 @@
 						</picture>
 						<div class="not-found__body">
 							<span class="not-found__title">Страница не найдена</span>
-							<a href="index.html" class="not-found__btn btn">На главную</a>
+							<a href="index.html" class="not-found__btn btn btn--uppercase">На главную</a>
 						</div>
 						<span class="not-found__help">Упс... <br>найден артефакт</span>
 					</div>
@@ -57,6 +57,11 @@
 				</div>
 			</div>
 			<!-- end of not found -->
+			<div class="wrapper__bg">
+				<video poster="" loop autoplay muted playsinline>
+					<source src="video/black-bg.mp4" type="video/mp4">
+				</video>
+			</div>
 		</div>
 		<!-- end of content -->
 	</div>
