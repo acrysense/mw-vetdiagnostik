@@ -98,7 +98,13 @@
 							<span>профессионального</span>
 							<span>сообщества</span>
 						</h1>
-						<span class="cooperation__quote">«Ветдиагностик» <br>стала членом Национальной ветеринарной палаты</span>
+						<span class="cooperation__quote"><b>«Ветдиагностик»</b> <br>стала членом Национальной ветеринарной палаты</span>
+						<picture class="cooperation__decor cooperation__decor--first">
+							<img src="img/cooperation-plus.svg" alt="Image">
+						</picture>
+						<picture class="cooperation__decor cooperation__decor--second">
+							<img src="img/cooperation-health.svg" alt="Image">
+						</picture>
 					</div>
 					<div class="cooperation__wrapper">
 						<a href="#" class="cooperation-card cooperation__item">
@@ -115,6 +121,9 @@
 								<span class="cooperation-card__title">Юридическим лицам</span>
 								<svg class="cooperation-card__icon">
 									<use xlink:href="img/sprite.svg#icon-arrow-to"></use>
+								</svg>
+								<svg class="cooperation-card__icon cooperation-card__icon--mobile">
+									<use xlink:href="img/sprite.svg#icon-arrow-to-sm"></use>
 								</svg>
 							</div>
 							<picture class="cooperation-card__bg">
@@ -136,6 +145,9 @@
 								<svg class="cooperation-card__icon">
 									<use xlink:href="img/sprite.svg#icon-arrow-to"></use>
 								</svg>
+								<svg class="cooperation-card__icon cooperation-card__icon--mobile">
+									<use xlink:href="img/sprite.svg#icon-arrow-to-sm"></use>
+								</svg>
 							</div>
 							<picture class="cooperation-card__bg">
 								<img src="img/cooperation-02.jpg" alt="Image">
@@ -156,6 +168,9 @@
 								<svg class="cooperation-card__icon">
 									<use xlink:href="img/sprite.svg#icon-arrow-to"></use>
 								</svg>
+								<svg class="cooperation-card__icon cooperation-card__icon--mobile">
+									<use xlink:href="img/sprite.svg#icon-arrow-to-sm"></use>
+								</svg>
 							</div>
 							<picture class="cooperation-card__bg">
 								<img src="img/cooperation-03.jpg" alt="Image">
@@ -170,8 +185,82 @@
 		<!-- footer -->
 		<footer class="footer" id="footer">
 			<div class="container">
+				<div class="footer-nav footer__navbar">
+					<div class="footer-nav__wrap">
+						<ul class="footer-nav__list">
+							<li class="footer-nav__item">
+								<a href="#" class="footer-nav__link">
+									<span>На главную</span>
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-link"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="#" class="footer-nav__link">
+									<span>Исследования</span>
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-link"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="#" class="footer-nav__link">
+									<span>Сотрудничество</span>
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-link"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="#" class="footer-nav__link">
+									<span>События</span>
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-link"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="#" class="footer-nav__link">
+									<span>Статьи</span>
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-link"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="#" class="footer-nav__link">
+									<span>Контакты</span>
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-link"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 				<div class="footer__top">
-					<div class="footer-socnav footer__socnav"></div>
+					<div class="footer-socnav footer__socnav">
+						<div class="footer-socnav__wrap">
+							<ul class="footer-socnav__list">
+								<li class="footer-socnav__item">
+									<a href="#" class="footer-socnav__link">
+										<svg class="footer-socnav__icon">
+											<use xlink:href="img/sprite.svg#icon-tg"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="footer-socnav__item">
+									<a href="#" class="footer-socnav__link">
+										<svg class="footer-socnav__icon">
+											<use xlink:href="img/sprite.svg#icon-vk"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+							<span class="footer-socnav__title">@vetdiagnostik</span>
+						</div>
+					</div>
 				</div>
 				<div class="footer__wrap">
 					<div class="footer__wrapper">
@@ -227,6 +316,8 @@
 	<!-- end of menu -->
 	<!-- scripts -->
 	<script type="module" src="js/vendor.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 

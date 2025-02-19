@@ -2,6 +2,13 @@
 @font-face {
   font-family: "PitagonSansMono";
   font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local("PitagonSansMono"), url("../fonts/PitagonSansMono/PitagonSansMono-Thin.woff2") format("woff2"), url("../fonts/PitagonSansMono/PitagonSansMono-Thin.woff") format("woff"), url("../fonts/PitagonSansMono/PitagonSansMono-Thin.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "PitagonSansMono";
+  font-style: normal;
   font-weight: 300;
   font-display: swap;
   src: local("PitagonSansMono"), url("../fonts/PitagonSansMono/PitagonSansMono-Light.woff2") format("woff2"), url("../fonts/PitagonSansMono/PitagonSansMono-Light.woff") format("woff"), url("../fonts/PitagonSansMono/PitagonSansMono-Light.eot") format("embedded-opentype");
