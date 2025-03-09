@@ -74,7 +74,7 @@
 						</ul>
 					</div>
 					<div class="c-search header__search">
-						<button class="c-search__trigger">
+						<button class="c-search__trigger" aria-label="Поиск">
 							<svg>
 								<use xlink:href="img/sprite.svg#icon-search"></use>
 							</svg>
@@ -107,7 +107,7 @@
 						</picture>
 					</div>
 					<div class="cooperation__wrapper">
-						<a href="#" class="cooperation-card cooperation__item">
+						<a href="#" class="cooperation-card cooperation__item" data-feedback-tab='0'>
 							<span class="cooperation-card__circle">
 								Полный
 								спектр
@@ -130,7 +130,7 @@
 								<img src="img/cooperation-01.jpg" alt="Image">
 							</picture>
 						</a>
-						<a href="#" class="cooperation-card cooperation__item">
+						<a href="#" class="cooperation-card cooperation__item" data-feedback-tab='1'>
 							<span class="cooperation-card__dot">
 								Сдача образцов
 								без привязки
@@ -153,7 +153,7 @@
 								<img src="img/cooperation-02.jpg" alt="Image">
 							</picture>
 						</a>
-						<a href="#" class="cooperation-card cooperation__item">
+						<a href="#" class="cooperation-card cooperation__item" data-feedback-tab='2'>
 							<span class="cooperation-card__consult">
 								Консультация
 								по результатам
@@ -309,15 +309,506 @@
 		<!-- end of footer -->
 	</div>
 	<!-- end of wrapper -->
+	<!-- search -->
+	<div class="search scroll-fixed" id="search">
+		<div class="search__wrap">
+			<form action="#" class="search__form">
+				<div class="search__top">
+					<button class="search__btn" aria-label="Искать">
+						<svg>
+							<use xlink:href="img/sprite.svg#icon-search"></use>
+						</svg>
+					</button>
+					<input id="search-input" type="text" class="search__input" placeholder="Что вы ищите?">
+					<button class="search__close" id="search-close">отмена</button>
+				</div>
+				<!-- add class 'is--active' for visible search results -->
+				<div class="search__results">
+					<span class="search__subtitle">Результаты поиска 011</span>
+					<div class="search__wrapper">
+						<a href="#" class="search-card search__item">
+							<div class="search-card__body">
+								<span class="search-card__title">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-top-right"></use>
+									</svg>
+									<span>Исследование крови</span>
+								</span>
+								<span class="search-card__tag">Исследование</span>
+							</div>
+						</a>
+						<a href="#" class="search-card search__item">
+							<div class="search-card__body">
+								<span class="search-card__title">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-top-right"></use>
+									</svg>
+									<span>Исследование собак</span>
+								</span>
+								<span class="search-card__tag">Исследование</span>
+							</div>
+						</a>
+						<a href="#" class="search-card search__item">
+							<div class="search-card__body">
+								<span class="search-card__title">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-top-right"></use>
+									</svg>
+									<span>Исследование кошек</span>
+								</span>
+								<span class="search-card__tag">Исследование</span>
+							</div>
+						</a>
+						<a href="articles-inner.html" class="search-card search__item">
+							<div class="search-card__body">
+								<span class="search-card__title">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-top-right"></use>
+									</svg>
+									<span>Провели исследования для конференции</span>
+								</span>
+								<span class="search-card__tag">статья</span>
+							</div>
+						</a>
+						<a href="news-inner.html" class="search-card search__item">
+							<div class="search-card__body">
+								<span class="search-card__title">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-top-right"></use>
+									</svg>
+									<span>Санкт-Петербурге прошла <br>ветеринарная конференция по УЗИ</span>
+								</span>
+								<span class="search-card__tag">новость</span>
+							</div>
+							<picture class="search-card__img">
+								<img src="img/events-02.jpg" alt="Image">
+							</picture>
+						</a>
+						<a href="news-inner.html" class="search-card search__item">
+							<div class="search-card__body">
+								<span class="search-card__title">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-top-right"></use>
+									</svg>
+									<span>Санкт-Петербурге прошла <br>ветеринарная конференция по УЗИ</span>
+								</span>
+								<span class="search-card__tag">новость</span>
+							</div>
+							<picture class="search-card__img">
+								<img src="img/events-02.jpg" alt="Image">
+							</picture>
+						</a>
+						<a href="news-inner.html" class="search-card search__item">
+							<div class="search-card__body">
+								<span class="search-card__title">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-arrow-top-right"></use>
+									</svg>
+									<span>Санкт-Петербурге прошла <br>ветеринарная конференция по УЗИ</span>
+								</span>
+								<span class="search-card__tag">новость</span>
+							</div>
+							<picture class="search-card__img">
+								<img src="img/events-02.jpg" alt="Image">
+							</picture>
+						</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- end of search -->
 	<!-- menu -->
 	<div class="menu scroll-fixed" id="menu">
-		<div class="container"></div>
+		<div class="menu__wrap">
+			<div class="menu__top">
+				<div class="c-search menu__search">
+					<button class="c-search__trigger">
+						<svg>
+							<use xlink:href="img/sprite.svg#icon-search"></use>
+						</svg>
+					</button>
+				</div>
+				<button class="menu__close" id="menu-close">Close</button>
+			</div>
+			<nav class="nav menu__nav">
+				<ul class="nav__list">
+					<li class="nav__item">
+						<a href="research.html" class="nav__link">Исследования</a>
+					</li>
+					<li class="nav__item">
+						<a href="cooperation.html" class="nav__link">Сотрудничество</a>
+					</li>
+					<li class="nav__item">
+						<a href="events.html" class="nav__link">События</a>
+					</li>
+					<li class="nav__item">
+						<a href="articles.html" class="nav__link">Статьи</a>
+					</li>
+					<li class="nav__item">
+						<a href="contacts.html" class="nav__link">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="menu__bottom">
+				<div class="c-socnav menu__socnav">
+					<ul class="c-socnav__list">
+						<li class="c-socnav__item">
+							<a href="#" class="c-socnav__link">
+								<svg class="c-socnav__icon">
+									<use xlink:href="img/sprite.svg#icon-tg"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="c-socnav__item">
+							<a href="#" class="c-socnav__link">
+								<svg class="c-socnav__icon">
+									<use xlink:href="img/sprite.svg#icon-vk"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- end of menu -->
+	<!-- feedback modals -->
+	<div class="feedback-modal scroll-fixed" id="feedback-modal">
+		<div class="feedback-modal__wrap">
+			<button class="feedback-modal__close" aria-label="Закрыть">
+				<svg>
+					<use xlink:href="img/sprite.svg#icon-close"></use>
+				</svg>
+			</button>
+			<div class="feedback-modal-tabs feedback-modal__tabs">
+				<ul class="feedback-modal-tabs__list">
+					<li class="feedback-modal-tabs__item">
+						<button class="feedback-modal-tabs__tab">Юридическим лицам</button>
+					</li>
+					<li class="feedback-modal-tabs__item">
+						<button class="feedback-modal-tabs__tab">Ветеринарным врачам</button>
+					</li>
+					<li class="feedback-modal-tabs__item">
+						<button class="feedback-modal-tabs__tab">Владельцам питомцев</button>
+					</li>
+				</ul>
+				<div class="feedback-modal-tabs__holder">
+					<div class="feedback-modal__wrapper">
+						<picture class="feedback-modal__img">
+							<img src="img/feedback-modal-01.png" alt="Image">
+						</picture>
+						<div class="feedback-modal__body">
+							<form action="#" class="feedback-modal-form feedback-modal__form">
+								<div class="feedback-modal-form__main">
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Контактное лицо *">
+											</div>
+											<span class="input-field__error">Обязательное поле к заполнению</span>
+										</div>
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Должность">
+											</div>
+										</div>
+									</div>
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="tel" class="input-field__input" id="feedback-modal-name" placeholder="Телефон *" data-inputmask="'mask': '+7 (999) 999-99-99'">
+											</div>
+											<span class="input-field__error">Обязательное поле к заполнению</span>
+										</div>
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="email" class="input-field__input" id="feedback-modal-name" placeholder="Почта">
+											</div>
+										</div>
+									</div>
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Организация *">
+											</div>
+											<span class="input-field__error">Обязательное поле к заполнению</span>
+										</div>
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Реквизиты">
+											</div>
+										</div>
+									</div>
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<textarea class="input-field__textarea" id="feedback-modal-name" placeholder="Комментарий"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="feedback-modal-form__bottom">
+									<span class="feedback-modal-form__help">Я соглашаюсь с <a href="#">Политикой конфиденциальности</a> <br>и даю согласие на <a href="#">обработку персональных данных</a>.</span>
+									<button class="feedback-modal-form__btn btn btn--uppercase">Отправить заявку</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="feedback-modal-tabs__holder">
+					<div class="feedback-modal__wrapper">
+						<picture class="feedback-modal__img">
+							<img src="img/feedback-modal-02.png" alt="Image">
+						</picture>
+						<div class="feedback-modal__body">
+							<form action="#" class="feedback-modal-form feedback-modal__form">
+								<div class="feedback-modal-form__main">
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="ФИО *">
+											</div>
+											<span class="input-field__error">Обязательное поле к заполнению</span>
+										</div>
+									</div>
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="tel" class="input-field__input" id="feedback-modal-name" placeholder="Телефон *" data-inputmask="'mask': '+7 (999) 999-99-99'">
+											</div>
+											<span class="input-field__error">Обязательное поле к заполнению</span>
+										</div>
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="email" class="input-field__input" id="feedback-modal-name" placeholder="Почта">
+											</div>
+										</div>
+									</div>
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Паспорт">
+											</div>
+										</div>
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Диплом">
+											</div>
+										</div>
+									</div>
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<textarea class="input-field__textarea" id="feedback-modal-name" placeholder="Комментарий"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="feedback-modal-form__bottom">
+									<span class="feedback-modal-form__help">Я соглашаюсь с <a href="#">Политикой конфиденциальности</a> <br>и даю согласие на <a href="#">обработку персональных данных</a>.</span>
+									<button class="feedback-modal-form__btn btn btn--uppercase">Отправить заявку</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="feedback-modal-tabs__holder">
+					<div class="feedback-modal__wrapper">
+						<picture class="feedback-modal__img">
+							<img src="img/feedback-modal-03.png" alt="Image">
+						</picture>
+						<div class="feedback-modal__body">
+							<form action="#" class="feedback-modal-form feedback-modal__form">
+								<div class="feedback-modal-form__main">
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="ФИО * ">
+											</div>
+											<span class="input-field__error">Обязательное поле к заполнению</span>
+										</div>
+									</div>
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="tel" class="input-field__input" id="feedback-modal-name" placeholder="Телефон *" data-inputmask="'mask': '+7 (999) 999-99-99'">
+											</div>
+											<span class="input-field__error">Обязательное поле к заполнению</span>
+										</div>
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<input type="email" class="input-field__input" id="feedback-modal-name" placeholder="Почта">
+											</div>
+										</div>
+									</div>
+									<div class="feedback-modal-form__inner">
+										<div class="select-box select-box--single feedback-modal-form__input">
+											<div class="select-box__container">
+												<div class="select-box__section">
+													<div class="select-box__wrap">
+														<div class="select-box__option">
+															<input type="radio" class="select-box__radio" id="animal-species-01" name="animal-species">
+															<label for="animal-species-01" class="select-box__label">
+																<span class="select-box__title">Собака</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="radio" class="select-box__radio" id="animal-species-02" name="animal-species">
+															<label for="animal-species-02" class="select-box__label">
+																<span class="select-box__title">Кошка</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="radio" class="select-box__radio" id="animal-species-03" name="animal-species">
+															<label for="animal-species-03" class="select-box__label">
+																<span class="select-box__title">Хомяк</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="radio" class="select-box__radio" id="animal-species-04" name="animal-species">
+															<label for="animal-species-04" class="select-box__label">
+																<span class="select-box__title">Черепаха</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="radio" class="select-box__radio" id="animal-species-05" name="animal-species">
+															<label for="animal-species-05" class="select-box__label">
+																<span class="select-box__title">Кролик</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="radio" class="select-box__radio" id="animal-species-06" name="animal-species">
+															<label for="animal-species-06" class="select-box__label">
+																<span class="select-box__title">Шиншилла</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="radio" class="select-box__radio" id="animal-species-07" name="animal-species">
+															<label for="animal-species-07" class="select-box__label">
+																<span class="select-box__title">Попугай</span>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="select-box__selected">
+												<svg>
+													<use xlink:href="img/sprite.svg#icon-caret"></use>
+												</svg>
+												<span class="select-box__placeholder is--active">Вид животного</span>
+												<span class="select-box__values"></span>
+											</div>
+										</div>
+										<div class="select-box feedback-modal-form__input">
+											<div class="select-box__container">
+												<div class="select-box__search">
+													<input type="text" class="select-box__search-input" placeholder="Поиск по номеру или названию">
+												</div>
+												<div class="select-box__section select-box__section--selected">
+													<span class="select-box__subtitle">Выбранные анализы</span>
+													<div class="select-box__wrap"></div>
+												</div>
+												<div class="select-box__section">
+													<span class="select-box__subtitle">Гематология</span>
+													<div class="select-box__wrap">
+														<div class="select-box__option">
+															<input type="checkbox" class="select-box__radio" id="analysis-01" name="analysis">
+															<label for="analysis-01" class="select-box__label">
+																<span class="select-box__value">1.1</span>
+																<span class="select-box__title select-box__title--sm">Общий анализ крови (автомат + лейкоформула) </span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="checkbox" class="select-box__radio" id="analysis-02" name="analysis">
+															<label for="analysis-02" class="select-box__label">
+																<span class="select-box__value">1.1.1</span>
+																<span class="select-box__title select-box__title--sm">Общий анализ крови (автомат + лейкоформула + RTS + СОЭ)</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="checkbox" class="select-box__radio" id="analysis-03" name="analysis">
+															<label for="analysis-03" class="select-box__label">
+																<span class="select-box__value">1.2</span>
+																<span class="select-box__title select-box__title--sm">Автоматический подсчёт клеток</span>
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="select-box__section">
+													<span class="select-box__subtitle">Биохимия</span>
+													<div class="select-box__wrap">
+														<div class="select-box__option">
+															<input type="checkbox" class="select-box__radio" id="analysis-11" name="analysis">
+															<label for="analysis-11" class="select-box__label">
+																<span class="select-box__value">1.3</span>
+																<span class="select-box__title select-box__title--sm">Лейкоциты (+лейкоформула)</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="checkbox" class="select-box__radio" id="analysis-12" name="analysis">
+															<label for="analysis-12" class="select-box__label">
+																<span class="select-box__value">1.4</span>
+																<span class="select-box__title select-box__title--sm">Ретикулоциты (RTS)</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="checkbox" class="select-box__radio" id="analysis-13" name="analysis">
+															<label for="analysis-13" class="select-box__label">
+																<span class="select-box__value">1.5</span>
+																<span class="select-box__title select-box__title--sm">Тромбоциты</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="checkbox" class="select-box__radio" id="analysis-13" name="analysis">
+															<label for="analysis-13" class="select-box__label">
+																<span class="select-box__value">1.6</span>
+																<span class="select-box__title select-box__title--sm">Кровепаразиты (мазок)</span>
+															</label>
+														</div>
+														<div class="select-box__option">
+															<input type="checkbox" class="select-box__radio" id="analysis-13" name="analysis">
+															<label for="analysis-13" class="select-box__label">
+																<span class="select-box__value">10.62.22</span>
+																<span class="select-box__title select-box__title--sm">Babesia (автомат + мазок) СТАНДАРТ</span>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="select-box__selected">
+												<svg>
+													<use xlink:href="img/sprite.svg#icon-caret"></use>
+												</svg>
+												<span class="select-box__placeholder is--active">Анализ</span>
+												<span class="select-box__values"></span>
+											</div>
+										</div>
+									</div>
+									<div class="feedback-modal-form__inner">
+										<div class="input-field feedback-modal-form__input">
+											<div class="input-field__inner">
+												<textarea class="input-field__textarea" id="feedback-modal-name" placeholder="Комментарий"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="feedback-modal-form__bottom">
+									<span class="feedback-modal-form__help">Я соглашаюсь с <a href="#">Политикой конфиденциальности</a> <br>и даю согласие на <a href="#">обработку персональных данных</a>.</span>
+									<button class="feedback-modal-form__btn btn btn--uppercase">Отправить заявку</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of feedback modals -->
 	<!-- scripts -->
-	<script type="module" src="js/vendor.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+	<script src="js/vendor.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> -->
 	<script src="js/app.min.js"></script>
 </body>
 

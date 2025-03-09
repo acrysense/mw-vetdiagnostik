@@ -1,44 +1,44 @@
-@import url("https://fonts.googleapis.com/css2?family=Flow+Circular&family=IBM+Plex+Sans:ital,wght@0,300;0,500;0,600;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Flow+Circular&family=IBM+Plex+Sans:ital,wght@0,300;0,500;0,600;1,500&display=fallback");
 @font-face {
   font-family: "PitagonSansMono";
   font-style: normal;
   font-weight: 100;
-  font-display: swap;
+  font-display: fallback;
   src: local("PitagonSansMono"), url("../fonts/PitagonSansMono/PitagonSansMono-Thin.woff2") format("woff2"), url("../fonts/PitagonSansMono/PitagonSansMono-Thin.woff") format("woff"), url("../fonts/PitagonSansMono/PitagonSansMono-Thin.eot") format("embedded-opentype");
 }
 @font-face {
   font-family: "PitagonSansMono";
   font-style: normal;
   font-weight: 300;
-  font-display: swap;
+  font-display: fallback;
   src: local("PitagonSansMono"), url("../fonts/PitagonSansMono/PitagonSansMono-Light.woff2") format("woff2"), url("../fonts/PitagonSansMono/PitagonSansMono-Light.woff") format("woff"), url("../fonts/PitagonSansMono/PitagonSansMono-Light.eot") format("embedded-opentype");
 }
 @font-face {
   font-family: "PitagonSansMono";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: fallback;
   src: local("PitagonSansMono"), url("../fonts/PitagonSansMono/PitagonSansMono-Regular.woff2") format("woff2"), url("../fonts/PitagonSansMono/PitagonSansMono-Regular.woff") format("woff"), url("../fonts/PitagonSansMono/PitagonSansMono-Regular.eot") format("embedded-opentype");
 }
 @font-face {
   font-family: "PitagonSansMono";
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: fallback;
   src: local("PitagonSansMono"), url("../fonts/PitagonSansMono/PitagonSansMono-Medium.woff2") format("woff2"), url("../fonts/PitagonSansMono/PitagonSansMono-Medium.woff") format("woff"), url("../fonts/PitagonSansMono/PitagonSansMono-Medium.eot") format("embedded-opentype");
 }
 @font-face {
   font-family: "PitagonSansMono";
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: fallback;
   src: local("PitagonSansMono"), url("../fonts/PitagonSansMono/PitagonSansMono-SemiBold.woff2") format("woff2"), url("../fonts/PitagonSansMono/PitagonSansMono-SemiBold.woff") format("woff"), url("../fonts/PitagonSansMono/PitagonSansMono-SemiBold.eot") format("embedded-opentype");
 }
 @font-face {
   font-family: "PitagonSansMono";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: fallback;
   src: local("PitagonSansMono"), url("../fonts/PitagonSansMono/PitagonSansMono-Bold.woff2") format("woff2"), url("../fonts/PitagonSansMono/PitagonSansMono-Bold.woff") format("woff"), url("../fonts/PitagonSansMono/PitagonSansMono-Bold.eot") format("embedded-opentype");
 }
 /*!
