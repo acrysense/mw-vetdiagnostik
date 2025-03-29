@@ -504,46 +504,46 @@
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Контактное лицо *">
+												<input type="text" class="input-field__input" id="feedback-modal-name-le" placeholder="Контактное лицо *">
 											</div>
 											<span class="input-field__error">Обязательное поле к заполнению</span>
 										</div>
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Должность">
+												<input type="text" class="input-field__input" id="feedback-modal-position-le" placeholder="Должность">
 											</div>
 										</div>
 									</div>
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="tel" class="input-field__input" id="feedback-modal-name" placeholder="Телефон *" data-inputmask="'mask': '+7 (999) 999-99-99'">
+												<input type="tel" class="input-field__input" id="feedback-modal-phone-le" placeholder="Телефон *" data-inputmask="'mask': '+7 (999) 999-99-99'">
 											</div>
 											<span class="input-field__error">Обязательное поле к заполнению</span>
 										</div>
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="email" class="input-field__input" id="feedback-modal-name" placeholder="Почта">
+												<input type="email" class="input-field__input" id="feedback-modal-email-le" placeholder="Почта">
 											</div>
 										</div>
 									</div>
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Организация *">
+												<input type="text" class="input-field__input" id="feedback-modal-org-le" placeholder="Организация *">
 											</div>
 											<span class="input-field__error">Обязательное поле к заполнению</span>
 										</div>
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Реквизиты">
+												<input type="text" class="input-field__input" id="feedback-modal-payment-le" placeholder="Реквизиты">
 											</div>
 										</div>
 									</div>
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<textarea class="input-field__textarea" id="feedback-modal-name" placeholder="Комментарий"></textarea>
+												<textarea class="input-field__textarea" id="feedback-modal-comment-le" placeholder="Комментарий"></textarea>
 											</div>
 										</div>
 									</div>
@@ -567,7 +567,7 @@
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="ФИО *">
+												<input type="text" class="input-field__input" id="feedback-modal-name-vet" placeholder="ФИО *">
 											</div>
 											<span class="input-field__error">Обязательное поле к заполнению</span>
 										</div>
@@ -575,32 +575,50 @@
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="tel" class="input-field__input" id="feedback-modal-name" placeholder="Телефон *" data-inputmask="'mask': '+7 (999) 999-99-99'">
+												<input type="tel" class="input-field__input" id="feedback-modal-phone-vet" placeholder="Телефон *" data-inputmask="'mask': '+7 (999) 999-99-99'">
 											</div>
 											<span class="input-field__error">Обязательное поле к заполнению</span>
 										</div>
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="email" class="input-field__input" id="feedback-modal-name" placeholder="Почта">
+												<input type="email" class="input-field__input" id="feedback-modal-email-vet" placeholder="Почта">
 											</div>
 										</div>
 									</div>
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Паспорт">
+												<input type="file" class="input-field__input" id="feedback-modal-pass-vet" placeholder="Паспорт">
+												<label for="feedback-modal-pass-vet" class="input-field__file-label">Паспорт</label>
+												<div class="input-field__file">
+													<button class="input-field__reset">
+														<svg>
+															<use xlink:href="img/sprite.svg#icon-close"></use>
+														</svg>
+													</button>
+													<span class="input-field__file-name"></span>
+												</div>
 											</div>
 										</div>
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="Диплом">
+												<input type="file" class="input-field__input" id="feedback-modal-edu-vet" placeholder="Диплом">
+												<label for="feedback-modal-edu-vet" class="input-field__file-label">Диплом</label>
+												<div class="input-field__file">
+													<button class="input-field__reset">
+														<svg>
+															<use xlink:href="img/sprite.svg#icon-close"></use>
+														</svg>
+													</button>
+													<span class="input-field__file-name"></span>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<textarea class="input-field__textarea" id="feedback-modal-name" placeholder="Комментарий"></textarea>
+												<textarea class="input-field__textarea" id="feedback-modal-comment-ve" placeholder="Комментарий"></textarea>
 											</div>
 										</div>
 									</div>
@@ -624,7 +642,7 @@
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="text" class="input-field__input" id="feedback-modal-name" placeholder="ФИО * ">
+												<input type="text" class="input-field__input" id="feedback-modal-name-pet" placeholder="ФИО * ">
 											</div>
 											<span class="input-field__error">Обязательное поле к заполнению</span>
 										</div>
@@ -632,13 +650,13 @@
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="tel" class="input-field__input" id="feedback-modal-name" placeholder="Телефон *" data-inputmask="'mask': '+7 (999) 999-99-99'">
+												<input type="tel" class="input-field__input" id="feedback-modal-phone-pet" placeholder="Телефон *" data-inputmask="'mask': '+7 (999) 999-99-99'">
 											</div>
 											<span class="input-field__error">Обязательное поле к заполнению</span>
 										</div>
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<input type="email" class="input-field__input" id="feedback-modal-name" placeholder="Почта">
+												<input type="email" class="input-field__input" id="feedback-modal-email-pet" placeholder="Почта">
 											</div>
 										</div>
 									</div>
@@ -703,7 +721,7 @@
 										<div class="select-box feedback-modal-form__input">
 											<div class="select-box__container">
 												<div class="select-box__search">
-													<input type="text" class="select-box__search-input" placeholder="Поиск по номеру или названию">
+													<input type="text" class="select-box__search-input" id="feedback-modal-analysis-pet" placeholder="Поиск по номеру или названию">
 												</div>
 												<div class="select-box__section select-box__section--selected">
 													<span class="select-box__subtitle">Выбранные анализы</span>
@@ -788,7 +806,7 @@
 									<div class="feedback-modal-form__inner">
 										<div class="input-field feedback-modal-form__input">
 											<div class="input-field__inner">
-												<textarea class="input-field__textarea" id="feedback-modal-name" placeholder="Комментарий"></textarea>
+												<textarea class="input-field__textarea" id="feedback-modal-comment-pet" placeholder="Комментарий"></textarea>
 											</div>
 										</div>
 									</div>

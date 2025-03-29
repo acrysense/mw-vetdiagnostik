@@ -375,6 +375,41 @@
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> -->
 	<script src="js/app.min.js"></script>
+	<!-- map -->
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script>
+		ymaps.ready(init);
+
+		function init() {
+			var myMap = new ymaps.Map('contacts-map', {
+				center: [60.014459, 30.327393],
+				zoom: 16,
+				controls: [],
+				behaviors: ['drag']
+			});
+
+			var myPlacemark = new ymaps.Placemark(
+				[60.014459, 30.327393], {}, {
+					iconLayout: 'default#image',
+					iconImageHref: 'img/icon-map-pin.svg',
+					iconImageSize: [397, 382],
+					iconImageOffset: [-198, -191]
+				}
+			);
+
+			myMap.geoObjects.add(myPlacemark);
+
+			var balloonContent = `<div class="custom-balloon">Санкт-Петербург <br>ул. Дрезденская <br>8, корп. 2</div>`;
+
+			myMap.balloon.open([60.014459, 30.327393], {
+				content: balloonContent
+			}, {
+				closeButton: false,
+				offset: [70, 0]
+			});
+		}
+	</script>
+	<!-- end of map -->
 </body>
 
 </html>
