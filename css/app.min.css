@@ -156,6 +156,8 @@ svg {
   background: #FFFFFF;
   border: 0.1388888889vw solid #FFFFFF;
   border-radius: 2.0833333333vw;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .btn::after {
   content: "";
@@ -172,6 +174,8 @@ svg {
   height: 1.1111111111vw;
   background: #141615;
   border-radius: 50%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .btn:hover {
   color: #141615;
@@ -186,6 +190,17 @@ svg {
 .btn--border {
   background: transparent;
   border-color: #141416;
+}
+@media screen and (hover: hover) {
+  .btn:hover {
+    color: #0728FF;
+  }
+  .btn:hover::after {
+    background: #0728FF;
+    -webkit-transform: translate(0, -50%) scale(1.04);
+        -ms-transform: translate(0, -50%) scale(1.04);
+            transform: translate(0, -50%) scale(1.04);
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .btn {
@@ -225,6 +240,11 @@ svg {
 .input-field.is--error .input-field__input:focus, .input-field.is--error .input-field__textarea:focus {
   border-color: #F14E69;
 }
+@media screen and (hover: hover) {
+  .input-field.is--error .input-field__input:hover, .input-field.is--error .input-field__textarea:hover {
+    border-bottom-color: #F14E69;
+  }
+}
 .input-field.is--error .input-field__error {
   display: block;
 }
@@ -252,6 +272,7 @@ svg {
 }
 .input-field__input:focus, .input-field__textarea:focus {
   outline: none;
+  border-color: #0728FF;
 }
 .input-field__input::-webkit-input-placeholder, .input-field__textarea::-webkit-input-placeholder {
   color: #292E33;
@@ -270,6 +291,11 @@ svg {
 }
 .input-field__input[type=file], .input-field__textarea[type=file] {
   display: none;
+}
+@media screen and (hover: hover) {
+  .input-field__input:hover, .input-field__textarea:hover {
+    border-color: #0728FF;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .input-field__input, .input-field__textarea {
@@ -303,7 +329,13 @@ svg {
   }
 }
 .input-field__file-label {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.2777777778vw;
   padding: 0 0 1.1805555556vw 0;
   width: 100%;
   font-size: 1.3888888889vw;
@@ -313,23 +345,41 @@ svg {
   border-bottom: 0.0694444444vw solid #292E33;
   cursor: pointer;
 }
+.input-field__file-label > svg {
+  min-width: 1.4583333333vw;
+  width: 1.4583333333vw;
+  height: 1.4583333333vw;
+  color: #292E33;
+}
 .input-field__file-label.is--hidden {
   display: none;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .input-field__file-label {
-    padding: 0 0 1.3440860215vw 0;
+    gap: 0.5376344086vw;
+    padding: 0 0 2.2849462366vw 0;
     font-size: 2.688172043vw;
     letter-spacing: -0.1075268817vw;
     border-bottom-width: 0.1344086022vw;
   }
+  .input-field__file-label > svg {
+    min-width: 2.8225806452vw;
+    width: 2.8225806452vw;
+    height: 2.8225806452vw;
+  }
 }
 @media screen and (max-width: 743px) {
   .input-field__file-label {
-    padding: 0 0 2.6666666667vw 0;
+    gap: 1.0666666667vw;
+    padding: 0 0 4.5333333333vw 0;
     font-size: 5.3333333333vw;
     letter-spacing: -0.2133333333vw;
     border-bottom-width: 0.2666666667vw;
+  }
+  .input-field__file-label > svg {
+    min-width: 5.6vw;
+    width: 5.6vw;
+    height: 5.6vw;
   }
 }
 .input-field__file {
@@ -950,6 +1000,11 @@ svg {
 .breadcrumb__link:hover {
   color: #FFFFFF;
 }
+@media screen and (hover: hover) {
+  .breadcrumb__link:hover {
+    color: #8593CD;
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .breadcrumb__link {
     max-width: 67.2043010753vw;
@@ -1099,6 +1154,11 @@ svg {
 }
 .nav__link:hover {
   color: #FFFFFF;
+}
+@media screen and (hover: hover) {
+  .nav__link:hover {
+    color: #95A4B9;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .nav__link {
@@ -1649,6 +1709,14 @@ svg {
 .footer-nav__link:hover {
   color: #DFE6EC;
 }
+@media screen and (hover: hover) {
+  .footer-nav__link:hover {
+    color: #8593CD;
+  }
+  .footer-nav__link:hover > svg {
+    color: #8593CD;
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .footer-nav__link {
     gap: 1.0752688172vw;
@@ -1732,6 +1800,11 @@ svg {
 .footer-info__link:hover {
   color: #141416;
 }
+@media screen and (hover: hover) {
+  .footer-info__link:hover {
+    color: #0728FF;
+  }
+}
 .footer-info__content {
   font-size: 1.0416666667vw;
   font-weight: normal;
@@ -1793,6 +1866,11 @@ svg {
   min-width: 1.7361111111vw;
   width: 1.7361111111vw;
   height: 1.7361111111vw;
+}
+@media screen and (hover: hover) {
+  .footer-socnav__link:hover > svg {
+    color: #8593CD;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .footer-socnav__link {
@@ -3223,6 +3301,11 @@ svg {
 .feedback-modal-form__input .input-field__input:focus, .feedback-modal-form__input .input-field__textarea:focus {
   border-bottom-color: #FFFFFF;
 }
+@media screen and (hover: hover) {
+  .feedback-modal-form__input .input-field__input:hover, .feedback-modal-form__input .input-field__textarea:hover {
+    border-bottom-color: #FFFFFF;
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .feedback-modal-form__input .input-field__input, .feedback-modal-form__input .input-field__textarea {
     padding: 0 0 2.688172043vw 0;
@@ -3249,6 +3332,9 @@ svg {
   .feedback-modal-form__input .input-field__textarea {
     min-height: 23.4666666667vw;
   }
+}
+.feedback-modal-form__input .input-field__file-label > svg {
+  color: #FFFFFF;
 }
 .feedback-modal-form__input .input-field__file-label, .feedback-modal-form__input .input-field__file-name {
   color: #FFFFFF;
@@ -3579,6 +3665,14 @@ svg {
 }
 .c-more-info__link:hover {
   color: #141416;
+}
+@media screen and (hover: hover) {
+  .c-more-info__link:hover {
+    color: #0728FF;
+  }
+  .c-more-info__link:hover > svg {
+    color: #0728FF;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .c-more-info__link {
@@ -5463,6 +5557,8 @@ svg {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .research-inner-details__img--add::before {
   content: "";
@@ -5505,6 +5601,13 @@ svg {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+@media screen and (hover: hover) {
+  .research-inner-details__img:hover img {
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+  }
 }
 @media screen and (min-width: 1024px) {
   .research-inner-details__img:first-child {
@@ -5829,6 +5932,15 @@ svg {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+@media screen and (hover: hover) {
+  .events-card__img[href]:hover img {
+    -webkit-transform: scale(1.015);
+        -ms-transform: scale(1.015);
+            transform: scale(1.015);
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .events-card__img {
@@ -5869,6 +5981,11 @@ svg {
 }
 .events-card__heading:hover {
   color: #FFFFFF;
+}
+@media screen and (hover: hover) {
+  .events-card__heading[href]:hover {
+    color: #8593CD;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .events-card__heading {
@@ -5947,6 +6064,11 @@ svg {
 }
 .events-card__title:hover {
   color: #DFE6EC;
+}
+@media screen and (hover: hover) {
+  .events-card__title[href]:hover {
+    color: #8593CD;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .events-card__title {
@@ -6693,11 +6815,19 @@ svg {
   display: none;
 }
 .events-inner__content-main a {
+  display: inline;
   opacity: 1;
-  color: #FFFFFF;
+  color: #95A4B9;
+  border-bottom: 0.0694444444vw solid #95A4B9;
 }
 .events-inner__content-main a:hover {
-  color: #FFFFFF;
+  color: #DFE6EC;
+}
+@media screen and (hover: hover) {
+  .events-inner__content-main a:hover {
+    color: #8593CD;
+    border-color: #8593CD;
+  }
 }
 .events-inner__content-main picture {
   position: relative;
@@ -6826,6 +6956,9 @@ svg {
     font-size: 2.4193548387vw;
     letter-spacing: -0.0967741935vw;
   }
+  .events-inner__content-main a {
+    border-bottom-width: 0.1344086022vw;
+  }
   .events-inner__content-main picture {
     border-radius: 2.688172043vw;
   }
@@ -6909,6 +7042,9 @@ svg {
     left: 2.1333333333vw;
     font-size: 4.8vw;
     letter-spacing: -0.192vw;
+  }
+  .events-inner__content-main a {
+    border-bottom-width: 0.2666666667vw;
   }
   .events-inner__content-main picture {
     border-radius: 5.3333333333vw;
@@ -7011,6 +7147,12 @@ svg {
 }
 .events-inner__title a:hover {
   color: #FFFFFF;
+}
+@media screen and (hover: hover) {
+  .events-inner__title a:hover {
+    color: #8593CD;
+    border-color: #8593CD;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .events-inner__title {
@@ -7171,6 +7313,11 @@ svg {
 }
 .articles-xl-card__title:hover {
   color: #FFFFFF;
+}
+@media screen and (hover: hover) {
+  .articles-xl-card__title:hover {
+    color: #95A4B9;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .articles-xl-card__title {
@@ -7343,6 +7490,15 @@ svg {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+@media screen and (hover: hover) {
+  .articles-xl-card__bg[href]:hover img {
+    -webkit-transform: scale(1.015);
+        -ms-transform: scale(1.015);
+            transform: scale(1.015);
+  }
 }
 .articles-xl-card__controls {
   position: absolute;
@@ -7914,6 +8070,11 @@ svg {
 .articles-lg-card__title:hover {
   color: #DFE6EC;
 }
+@media screen and (hover: hover) {
+  .articles-lg-card__title:hover {
+    color: #FFFFFF;
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .articles-lg-card__title {
     font-size: 2.688172043vw;
@@ -7997,6 +8158,11 @@ svg {
 }
 .articles-md-card__title:hover {
   color: #0728FF;
+}
+@media screen and (hover: hover) {
+  .articles-md-card__title:hover {
+    color: #95A4B9;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .articles-md-card__title {
@@ -9107,6 +9273,13 @@ svg {
 .cooperation-card:hover {
   color: #FFFFFF;
 }
+@media screen and (hover: hover) {
+  .cooperation-card:hover .cooperation-card__bg {
+    -webkit-transform: scale(1.015);
+        -ms-transform: scale(1.015);
+            transform: scale(1.015);
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .cooperation-card {
     height: 75.6720430108vw;
@@ -9222,6 +9395,8 @@ svg {
   display: block;
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .cooperation-card__bg::before {
   content: "";
@@ -9793,6 +9968,11 @@ svg {
 .contacts__link:hover {
   color: #292E33;
 }
+@media screen and (hover: hover) {
+  .contacts__link:hover {
+    color: #0728FF;
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .contacts__link {
     font-size: 6.1827956989vw;
@@ -9832,6 +10012,11 @@ svg {
 }
 .contacts__content a:hover {
   color: #000000;
+}
+@media screen and (hover: hover) {
+  .contacts__content a:hover {
+    color: #0728FF;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .contacts__content {
@@ -9905,6 +10090,12 @@ svg {
 }
 .contacts__description a:hover {
   color: #292E33;
+}
+@media screen and (hover: hover) {
+  .contacts__description a:hover {
+    color: #0728FF;
+    border-color: #0728FF;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .contacts__description {
