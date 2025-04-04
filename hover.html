@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Glitch Effect</title>
+	<style>
+		body {
+			background: #000;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+		}
+
+		.glitch {
+			position: relative;
+			font-size: 60px;
+			font-weight: bold;
+			color: white;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+
+		/* Создаем два слоя для эффекта */
+		.glitch::before,
+		.glitch::after {
+			content: attr(data-text);
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			transition: transform 0.3s;
+			pointer-events: none;
+		}
+
+		/* Верхняя половина */
+		.glitch::before {
+			clip-path: inset(0 0 50% 0);
+			color: #ff0000;
+			/* красноватый оттенок */
+		}
+
+		/* Нижняя половина */
+		.glitch::after {
+			clip-path: inset(50% 0 0 0);
+			color: #00ffff;
+			/* голубоватый оттенок */
+		}
+
+		/* Эффект при наведении - смещение по горизонтали */
+		.glitch:hover {
+			color: transparent
+		}
+
+		.glitch:hover::before {
+			transform: translateX(-5px);
+		}
+
+		.glitch:hover::after {
+			transform: translateX(5px);
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Атрибут data-text используется для заполнения псевдоэлементов -->
+	<div class="glitch" data-text="Glitch">Glitch</div>
+</body>
+
+</html>
