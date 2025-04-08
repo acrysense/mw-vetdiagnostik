@@ -79,8 +79,13 @@
 				antialias: true
 			});
 			renderer.outputEncoding = THREE.sRGBEncoding;
+			renderer.toneMapping = THREE.ACESFilmicToneMapping;
+			renderer.toneMappingExposure = 1.0; // можно немного корректировать
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+			const testAmbient = new THREE.AmbientLight(0xffffff, 1);
+			scene.add(testAmbient);
 
 			// Настраиваем GLTFLoader и DRACOLoader
 			const loader = new THREE.GLTFLoader();
@@ -92,7 +97,7 @@
 			let embeddedCamera; // Камера из glTF или запасная
 
 			loader.setPath('scope/');
-			loader.load('scope.gltf', (gltf) => {
+			loader.load('123.glb', (gltf) => {
 				// Вывод информации о текстурах (для проверки)
 				gltf.scene.traverse(child => {
 					if (child.isMesh) {
@@ -129,7 +134,7 @@
 				}
 				scene.add(embeddedCamera);
 
-				// Обработка света: если данные KHR_lights_punctual есть, создаем свет на их основе.
+				// Обработка света (оставляем ваш код для света)
 				const json = gltf.parser.json;
 				if (json.extensions && json.extensions.KHR_lights_punctual) {
 					const lightsDefs = json.extensions.KHR_lights_punctual.lights;
@@ -155,7 +160,6 @@
 								console.warn("Неизвестный тип света:", lightDef.type);
 						}
 						if (light) {
-							// Если позиционирования нет, задаем вручную (подберите значения)
 							light.position.set(0, 5 + index * 2, 5);
 							scene.add(light);
 						}

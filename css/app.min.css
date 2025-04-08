@@ -4411,14 +4411,14 @@ svg {
 }
 
 .main {
-  position: relative;
-  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
   color: #F5F8FF;
-  background-color: #060606;
-  background-image: url(../img/tech-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
 }
 .main__wrap {
   display: -webkit-box;
@@ -4495,9 +4495,74 @@ svg {
   }
 }
 
+.advantages {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  pointer-events: none;
+}
+.advantages__item {
+  opacity: 0;
+}
+.advantages__item + .advantages__item {
+  margin-top: 2.0833333333vw;
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .advantages__item + .advantages__item {
+    margin-top: 4.0322580645vw;
+  }
+}
+@media screen and (max-width: 743px) {
+  .advantages__item + .advantages__item {
+    margin-top: 8vw;
+  }
+}
+.advantages__value {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.6666666667vw;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: -0.0666666667vw;
+  color: #FFFFFF;
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .advantages__value {
+    font-size: 3.2258064516vw;
+    letter-spacing: -0.1290322581vw;
+  }
+}
+@media screen and (max-width: 743px) {
+  .advantages__value {
+    font-size: 6.4vw;
+    letter-spacing: -0.256vw;
+  }
+}
+
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.scroll-container {
+  height: 200vh;
+}
+
 .about {
   position: relative;
-  padding: 27.9166666667vw 0 0;
+  padding: 48.75vw 0 0;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .about {
@@ -8724,7 +8789,7 @@ svg {
 }
 
 .articles {
-  padding: 3.4722222222vw 0 0;
+  padding: 6.9444444444vw 0 0;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .articles {
