@@ -24,7 +24,7 @@
 </head>
 <html>
 
-<body style="--page-color: 6, 6, 6;">
+<body style="--page-color: 30, 44, 72;">
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!-- header -->
@@ -88,7 +88,7 @@
 		<!-- end of header -->
 		<!-- content -->
 		<div class="wrapper__content">
-			<div id="canvas-container"></div>
+			<div class="scroll-container"></div>
 			<!-- main -->
 			<section class="main" id="main">
 				<div class="container">
@@ -103,6 +103,8 @@
 							</h1>
 						</div>
 					</div>
+					<div class="main__canvas" id="canvas-container"></div>
+					<div class="main__bg"></div>
 				</div>
 			</section>
 			<!-- end of main -->
@@ -123,7 +125,6 @@
 				</div>
 			</div>
 			<!-- end of advantages -->
-			<div class="scroll-container"></div>
 			<div class="wrapper__next">
 				<!-- about -->
 				<section class="about" id="about">
@@ -231,7 +232,7 @@
 							</div>
 						</div>
 						<div class="about__bg">
-							<video poster="" loop autoplay muted playsinline>
+							<video poster="" loop muted playsinline>
 								<source src="video/microworld-bg.mp4" type="video/mp4">
 							</video>
 						</div>
@@ -266,7 +267,7 @@
 		</div>
 		<!-- end of content -->
 		<!-- footer -->
-		<footer class="footer" id="footer" style="--background: #ABBFD9; --color: linear-gradient(260deg, #17BFE0 0.58%, #0728FF 64.82%, #141416 99.42%);">
+		<footer class="footer" id="footer" style="--background: #28395C; --color: linear-gradient(260deg, rgba(173, 198, 224, 0.4) 0.58%, rgba(173, 198, 224, 0.4) 64.82%, rgba(173, 198, 224, 0.4) 99.42%);">
 			<div class="container">
 				<div class="footer__navbar">
 					<div class="splide">
@@ -357,29 +358,29 @@
 							<div class="footer-info footer__info">
 								<div class="footer-info__wrapper">
 									<div class="footer-info__content">
-										<p>Главное событие года <b>Vet Infect 2024</b> Мы ждем вас, чтобы вместе сделать ветеринарную медицину еще&nbsp;лучше! </p>
+										<span>Главное событие года <b>Vet Infect 2024</b> Мы ждем вас, чтобы вместе сделать ветеринарную медицину еще&nbsp;лучше!</span>
 									</div>
-									<div class="footer-info__main">
+									<a href="#" class="footer-info__main">
 										<picture class="footer-info__img">
-											<img src="img/qr-code.svg" alt="Image">
+											<img src="img/qr-code-light.svg" alt="Image">
 										</picture>
 										<div class="footer-info__body">
-											<a href="#" class="footer-info__link">
+											<span class="footer-info__link">
 												<span>Узнать подробнее</span>
-											</a>
+											</span>
 										</div>
-									</div>
+									</a>
 								</div>
 							</div>
 							<div class="footer__contacts">
 								<div class="footer__btns">
-									<a href="tel:88004441204" class="footer__btn btn btn--dark">8 (800) 444-12-04</a>
-									<a href="mailto:info@vetdiagnostik.ru" class="footer__btn btn btn--dark">info@vetdiagnostik.ru</a>
+									<a href="tel:88004441204" class="footer__btn btn btn--light">8 (800) 444-12-04</a>
+									<a href="mailto:info@vetdiagnostik.ru" class="footer__btn btn btn--light">info@vetdiagnostik.ru</a>
 								</div>
 								<div class="footer__inner">
 									<p class="footer__copyright">© 2024 ВетДиагностик</p>
 									<a href="https://mosco-web.ru/" class="footer__author" target="_blank">
-										<img src="img/moscoweb-black.svg" alt="moscoweb">
+										<img src="img/moscoweb-light.svg" alt="moscoweb">
 									</a>
 								</div>
 							</div>
@@ -567,6 +568,7 @@
 	<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 	<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
 	<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/RGBELoader.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 

@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
 
-<body style="--page-color: 149, 164, 185;">
+<body style="--page-color: 10, 11, 15;">
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!-- header -->
@@ -95,8 +95,8 @@
 							<div class="contacts__wrap">
 								<div class="contacts__left">
 									<div class="contacts__group">
-										<a href="tel:88129239989" class="contacts__link">8 (812) 923-99-89</a>
-										<a href="tel:88004441204" class="contacts__link">8 (800) 444-12-04</a>
+										<a href="tel:88129239989" class="contacts__link" data-text="8 (812) 923-99-89">8 (812) 923-99-89</a>
+										<a href="tel:88004441204" class="contacts__link" data-text="8 (800) 444-12-04">8 (800) 444-12-04</a>
 									</div>
 									<div class="contacts__content">
 										<p>Звонки принимаем с&nbsp;09:00&nbsp;по&nbsp;22:00</p>
@@ -107,24 +107,24 @@
 								</div>
 								<div class="contacts__right">
 									<div class="contacts__wrapper">
-										<div class="c-more-info contacts__more">
+										<a href="#" class="c-more-info contacts__more">
 											<div class="c-more-info__wrapper">
 												<picture class="c-more-info__img">
 													<img src="img/qr-code.svg" alt="Image">
 												</picture>
 												<div class="c-more-info__body">
-													<a href="#" class="c-more-info__link">
+													<span class="c-more-info__link">
 														<span>Узнать подробнее</span>
 														<svg>
 															<use xlink:href="img/sprite.svg#icon-eye"></use>
 														</svg>
-													</a>
+													</span>
 												</div>
 											</div>
 											<div class="c-more-info__content">
-												<p>Главное событие года <b>Vet Infect 2024</b> Мы ждем вас, чтобы вместе сделать ветеринарную медицину еще&nbsp;лучше! </p>
+												<span>Главное событие года <b>Vet Infect 2024</b> Мы ждем вас, чтобы вместе сделать ветеринарную медицину еще&nbsp;лучше!</span>
 											</div>
-										</div>
+										</a>
 									</div>
 									<div class="contacts__wrapper">
 										<div class="contacts-form contacts__form">
@@ -162,7 +162,7 @@
 							</div>
 							<div class="contacts__bottom">
 								<div class="contacts__group">
-									<a href="mailto:info@vetdiagnostik.ru" class="contacts__link">info@vetdiagnostik.ru</a>
+									<a href="mailto:info@vetdiagnostik.ru" class="contacts__link" data-text="info@vetdiagnostik.ru">info@vetdiagnostik.ru</a>
 								</div>
 								<div class="contacts__content">
 									<p>Почта</p>
@@ -376,6 +376,7 @@
 	<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 	<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
 	<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/RGBELoader.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 	<script src="js/app.min.js"></script>
 	<!-- map -->
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
