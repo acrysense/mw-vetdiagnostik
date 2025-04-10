@@ -1160,7 +1160,7 @@ svg {
   letter-spacing: -0.3375vw;
   text-transform: uppercase;
   white-space: nowrap;
-  opacity: 0.35;
+  opacity: 0.5;
   color: #DFE6EC;
 }
 .splide__link > svg {
@@ -1505,7 +1505,7 @@ svg {
   z-index: 1;
   overflow: hidden;
   margin-top: 7.2222222222vw;
-  color: #ADC6E0;
+  color: #060606;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .footer {
@@ -1913,10 +1913,7 @@ svg {
 }
 
 .footer-info {
-  color: #ADC6E0;
-}
-.footer-info[href]:hover {
-  color: #ADC6E0;
+  color: #060606;
 }
 .footer-info__wrapper {
   display: -webkit-box;
@@ -1930,6 +1927,10 @@ svg {
 .footer-info__main {
   max-width: 7.8472222222vw;
   width: 100%;
+  color: #060606;
+}
+.footer-info__main[href]:hover {
+  color: #060606;
 }
 .footer-info__img {
   position: relative;
@@ -1969,10 +1970,7 @@ svg {
   font-weight: 500;
   letter-spacing: -0.0222222222vw;
   text-transform: uppercase;
-  color: #ADC6E0;
-}
-.footer-info__link:hover {
-  color: #ADC6E0;
+  color: #060606;
 }
 .footer-info__content {
   font-size: 1.0416666667vw;
@@ -2043,7 +2041,7 @@ svg {
   min-width: 1.7361111111vw;
   width: 1.7361111111vw;
   height: 1.7361111111vw;
-  opacity: 0.06;
+  opacity: 0.5;
 }
 @media screen and (hover: hover) {
   .footer-socnav__link:hover {
@@ -2093,7 +2091,7 @@ svg {
   font-size: 1.1111111111vw;
   font-weight: normal;
   letter-spacing: -0.0222222222vw;
-  opacity: 0.06;
+  opacity: 0.5;
   color: #DFE6EC;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
@@ -4418,6 +4416,7 @@ svg {
   bottom: 0;
   left: 0;
   z-index: 2;
+  pointer-events: none;
   color: #F5F8FF;
   background-color: #060606;
 }
@@ -6676,13 +6675,6 @@ svg {
 .research-inner__item.is--open .research-inner__trigger::before {
   border-color: #FFFFFF;
 }
-.research-inner__item.is--open .research-inner__trigger-more {
-  opacity: 1;
-  color: transparent;
-}
-.research-inner__item.is--open .research-inner__trigger-more::after {
-  background: #FFFFFF;
-}
 @media screen and (hover: hover) {
   .research-inner__item:hover .research-inner__trigger {
     padding-top: 2.0833333333vw;
@@ -6693,15 +6685,28 @@ svg {
   .research-inner__item:hover .research-inner__trigger-more {
     opacity: 1;
   }
+  .research-inner__item.is--open .research-inner__trigger-more {
+    opacity: 1;
+    color: transparent;
+  }
+  .research-inner__item.is--open .research-inner__trigger-more::after {
+    background: #FFFFFF;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .research-inner__item {
     border-top-width: 0.1344086022vw;
   }
+  .research-inner__item.is--open .research-inner__trigger {
+    padding-top: 3.0913978495vw;
+  }
 }
 @media screen and (max-width: 743px) {
   .research-inner__item {
     border-top-width: 0.2666666667vw;
+  }
+  .research-inner__item.is--open .research-inner__trigger {
+    padding-top: 5.0666666667vw;
   }
 }
 .research-inner__trigger {
@@ -7952,12 +7957,14 @@ svg {
   .events-card__stats {
     gap: 2.1505376344vw;
     margin-top: 2.688172043vw;
+    margin-left: 2.0161290323vw;
   }
 }
 @media screen and (max-width: 743px) {
   .events-card__stats {
     gap: 4.2666666667vw;
     margin-top: 5.3333333333vw;
+    margin-left: 4vw;
   }
 }
 .events-card__stats-item {
