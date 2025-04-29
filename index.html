@@ -37,96 +37,119 @@
 			display: block;
 			width: 100%;
 			height: 100%;
-			padding: 118px 60px;
 			color: #FFFFFF;
 			background-color: #060606;
+			-webkit-transition: opacity 0.5s ease-out;
 			transition: opacity 0.5s ease-out;
+		}
+
+		.loader__wrapper {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 1;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+
+		.loader__img {
+			display: block;
+			margin: 0 auto 37px;
+			width: 160px;
+			height: 160px;
+		}
+
+		.loader__img img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
 		}
 
 		.loader__text {
 			display: block;
 			margin: 0 auto;
-			padding-top: calc(50dvh - 44.5px - 118px);
 			width: fit-content;
 			font-family: 'PitagonSansMono', sans-serif;
 			font-size: 34px;
 			font-weight: 500;
 		}
 
-		@media screen and (max-width: 1023px) {
-			.loader {
-				padding: 40px;
+		.loader__progress {
+			overflow: hidden;
+			margin: 13px auto 0;
+			max-width: 391px;
+			width: 100%;
+			height: 12px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.loader__progress-fill {
+			width: 0%;
+			height: 100%;
+			background: #fff;
+			transition: width 0.1s linear;
+		}
+
+		@media screen and (max-width: 743px) {
+			.loader__img {
+				width: 100px;
+				height: 100px;
 			}
 
 			.loader__text {
-				padding-top: calc(100dvh - 80px - 45px - 40px);
+				font-size: 24px;
 			}
-		}
 
-		.loader__bg {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			z-index: -1;
-			display: block;
-			width: 100%;
-			height: 100%;
-			opacity: 0.2;
-			filter: blur(2.6666667461395264px);
+			.loader__text>span {
+				display: block;
+			}
+
+			.loader__progress {
+				height: 10px;
+			}
 		}
 	</style>
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			// Глобальные переменные для визуального прогресса:
-			var displayedProgress = 0; // Визуально отображаемое значение (0–100)
-			var computedProgress = 0; // Фактический процент, рассчитываемый по onprogress
-			var inPhase1 = true; // Флаг, что первая фаза (0–60%) ещё идёт
-			var startTime = performance.now();
-			var phase1Duration = 300; // Длительность фазы 1 в мс (быстрый переход до 60%)
-			var lastFrameTime = performance.now(); // Для расчёта dt (разность между кадрами)
+		document.addEventListener('DOMContentLoaded', () => {
+			let displayedProgress = 0,
+				computedProgress = 0,
+				inPhase1 = true;
+			const startTime = performance.now(),
+				phase1Duration = 300;
+			let lastFrameTime = startTime;
 
-			lottie.loadAnimation({
-				container: document.querySelector('.loader__bg'), // контейнер для анимации
-				renderer: 'svg', // варианты: 'svg', 'canvas', 'html'
-				loop: true, // включение зацикливания
-				autoplay: true, // автозапуск анимации
-				path: 'tech-bg.json' // путь к JSON файлу анимации
-			});
-
-			// Функция анимации прогресса с использованием requestAnimationFrame
 			function animateProgress() {
-				var now = performance.now();
-				var dt = now - lastFrameTime;
+				const now = performance.now(),
+					dt = now - lastFrameTime;
 				lastFrameTime = now;
-				var elapsed = now - startTime;
+				const elapsed = now - startTime;
 
 				if (inPhase1) {
-					// Фаза 1: быстрое увеличение от 0 до 60%
-					var progress = (elapsed / phase1Duration) * 60;
-					if (progress > 60) progress = 60;
-					displayedProgress = progress;
+					let p = (elapsed / phase1Duration) * 60;
+					if (p > 60) p = 60;
+					displayedProgress = p;
 					if (elapsed >= phase1Duration) {
 						inPhase1 = false;
-						// Гарантируем, что после фазы 1 значение не меньше 60%
-						if (displayedProgress < 60) {
-							displayedProgress = 60;
-						}
+						displayedProgress = Math.max(displayedProgress, 60);
 					}
 				} else {
-					// Фаза 2: если computedProgress меньше 73% —
-					// увеличиваем displayedProgress медленно (примерно 1% за 300 мс)
-					if (computedProgress < 73) {
-						displayedProgress += dt / 300; // dt (в мс) / 300 = прирост в %
-						if (displayedProgress > 73) displayedProgress = 73;
+					if (computedProgress < 96) {
+						const minStep = dt / 600;
+						const maxStep = dt / 250;
+						const step = minStep + Math.random() * (maxStep - minStep);
+						displayedProgress = Math.min(96, displayedProgress + step);
 					} else {
-						// Если computedProgress (фактический) 73% и выше, интерполируем к нему
-						displayedProgress += (computedProgress - displayedProgress) * 0.1;
+						displayedProgress += (computedProgress - displayedProgress) * 0.2;
 					}
 				}
 
-				document.getElementById('progress-text').textContent = Math.floor(displayedProgress) + '%';
+				const textEl = document.getElementById('progress-text');
+				if (textEl) textEl.textContent = Math.floor(displayedProgress) + '%';
+				const barEl = document.querySelector('.loader__progress-fill');
+				if (barEl) barEl.style.width = displayedProgress + '%';
 
 				if (displayedProgress < 100) {
 					requestAnimationFrame(animateProgress);
@@ -134,73 +157,170 @@
 			}
 			requestAnimationFrame(animateProgress);
 
-			// Функция для загрузки main.min.js через XMLHttpRequest
-			function loadMainJS(url, callback) {
-				var xhr = new XMLHttpRequest();
-				xhr.open('GET', url, true);
-
-				xhr.onprogress = function(e) {
-					if (e.lengthComputable) {
-						// Вычисляем фактический процент загрузки
-						computedProgress = (e.loaded / e.total) * 100;
-					}
-				};
-
-				xhr.onreadystatechange = function() {
-					if (xhr.readyState === 4) {
-						if (xhr.status === 200) {
-							// При завершении загрузки устанавливаем computedProgress в 100%
-							computedProgress = 100;
-							// Создаем <script> и вставляем в него загруженный код
-							var script = document.createElement('script');
-							script.type = 'text/javascript';
-							script.text = xhr.responseText;
-							document.body.appendChild(script);
-							if (callback) callback();
-						} else {
-							console.error('Ошибка загрузки main.min.js');
-						}
-					}
-				};
-
-				xhr.onerror = function() {
-					console.error('Ошибка запроса main.min.js');
-				};
-
-				xhr.send();
+			function loadScript(src, isModule = false) {
+				return new Promise((res, rej) => {
+					const s = document.createElement('script');
+					s.src = src;
+					s.async = false;
+					if (isModule) s.type = 'module';
+					s.onload = () => res();
+					s.onerror = () => rej(new Error('Не загрузился ' + src));
+					document.body.appendChild(s);
+				});
 			}
 
-			// Запускаем загрузку main.min.js
-			loadMainJS('js/app.min.js', function() {
-				// После загрузки ждем, пока визуальный прогресс приблизится к 100%
-				var checkProgress = setInterval(function() {
-					if (displayedProgress >= 99.5) {
-						clearInterval(checkProgress);
-						var loaderEl = document.getElementById('loader');
-						var contentEl = document.getElementById('content');
-						loaderEl.style.opacity = '0';
-						setTimeout(function() {
-							loaderEl.style.display = 'none';
-							contentEl.style.display = 'block';
-						}, 500);
-					}
-				}, 50);
-			});
+			(async () => {
+				try {
+					await loadScript('js/vendor.min.js', false);
+					await loadScript('js/three.bundle.js', false);
+					await loadScript('js/app.min.js', false);
+					await loadScript('js/microscope.js', true);
+
+					const mod = await import('./js/microscope.js');
+					await mod.initMicroscope(window.THREE);
+
+					computedProgress = 100;
+
+					const iv = setInterval(() => {
+						if (displayedProgress >= 99.5) {
+							clearInterval(iv);
+
+							document.getElementById('loader').style.opacity = '0';
+							setTimeout(() => {
+								document.getElementById('loader').style.display = 'none';
+								document.getElementById('content').classList.remove('is--loading');
+							}, 500);
+						}
+					}, 50);
+				} catch (err) {
+					console.error(err);
+					document.getElementById('loader').style.display = 'none';
+					document.getElementById('content').classList.remove('is--loading');
+				}
+			})();
 		});
 	</script>
+	<!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // === прелоадер ===
+          let displayedProgress = 0,
+              computedProgress  = 0,
+              inPhase1          = true;
+          const startTime      = performance.now(),
+                phase1Duration = 300;
+          // Инициализируем lastFrameTime правильно:
+          let lastFrameTime = startTime;
+      
+          function animateProgress() {
+            const now = performance.now();
+            const dt  = now - lastFrameTime;
+            lastFrameTime = now;
+            const elapsed = now - startTime;
+      
+            if (inPhase1) {
+              // фаза 1: 0→60% за phase1Duration
+              let p = (elapsed / phase1Duration) * 60;
+              if (p > 60) p = 60;
+              displayedProgress = p;
+              if (elapsed >= phase1Duration) {
+                inPhase1 = false;
+                if (displayedProgress < 60) displayedProgress = 60;
+              }
+            } else {
+              if (computedProgress < 73) {
+                // фаза 2: джиттер между 60 и 73
+                const minStep = dt / 500;
+                const maxStep = dt / 200;
+                const step = minStep + Math.random() * (maxStep - minStep);
+                displayedProgress = Math.min(73, displayedProgress + step);
+              } else {
+                // фаза 3: плавное догоняние до 100
+                displayedProgress += (computedProgress - displayedProgress) * 0.1;
+              }
+            }
+      
+            const textEl = document.getElementById('progress-text');
+            if (textEl) textEl.textContent = Math.floor(displayedProgress) + '%';
+      
+            if (displayedProgress < 100) {
+              requestAnimationFrame(animateProgress);
+            }
+          }
+          requestAnimationFrame(animateProgress);
+      
+          // === динамическая загрузка скриптов ===
+          function loadScript(src, isModule = false) {
+            return new Promise((res, rej) => {
+              const s = document.createElement('script');
+              s.src   = src;
+              s.async = false;
+              if (isModule) s.type = 'module';
+              s.onload  = () => res();
+              s.onerror = () => rej(new Error('Не загрузился ' + src));
+              document.body.appendChild(s);
+            });
+          }
+      
+          (async () => {
+            try {
+              await loadScript('js/vendor.min.js',    false);
+              await loadScript('js/three.bundle.js',  false);
+              await loadScript('js/app.min.js',       false);
+              await loadScript('js/microscope.js',    true);
+      
+              // инициализируем микроскоп и ждём загрузки модели
+              const mod = await import('./js/microscope.js');
+              await mod.initMicroscope(window.THREE);
+      
+              // всё готово → 100%
+              computedProgress = 100;
+      
+              // ждём, пока displayedProgress дойдёт до 100
+              const iv = setInterval(() => {
+                if (displayedProgress >= 99.5) {
+                  clearInterval(iv);
+                  document.getElementById('loader').style.opacity = '0';
+                  setTimeout(() => {
+                    document.getElementById('loader').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+                  }, 500);
+
+                  setTimeout(() => {
+                    document.getElementById('content').classList.remove('is--loading');
+                }, 1000);
+                }
+              }, 50);
+            } catch (err) {
+              console.error(err);
+              // при ошибке просто показываем контент
+              document.getElementById('loader').style.display = 'none';
+              document.getElementById('content').style.display = 'block';
+            }
+          })();
+        });
+        </script> -->
 	<!-- styles -->
 	<link rel="stylesheet" href="css/vendor.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
-<html>
 
 <body style="--page-color: 30, 44, 72;">
 	<div class="loader" id="loader">
-		<span class="loader__text"><span id="progress-text">0 %</span> vet diagnostik</span>
-		<div class="loader__bg"></div>
+		<div class="loader__wrapper">
+			<picture class="loader__img">
+				<img src="img/logotype-circle-transparent.svg" width="160" height="160" alt="ВетДиагностик">
+			</picture>
+			<span class="loader__text">
+				<span id="progress-text">0 %</span>
+				<span>VetDiagnostik</span>
+			</span>
+			<div class="loader__progress">
+				<div class="loader__progress-fill"></div>
+			</div>
+		</div>
 	</div>
 	<!-- wrapper -->
-	<div class="wrapper" id="content">
+	<div class="wrapper is--loading" id="content">
 		<!-- header -->
 		<header class="header" id="header">
 			<div class="container">
@@ -736,11 +856,6 @@
 		</div>
 	</div>
 	<!-- end of menu -->
-	<!-- scripts -->
-	<script src="js/vendor.min.js"></script>
-	<script src="js/app.min.js"></script>
-	<script src="js/three.bundle.js"></script>
-	<script src="js/microscope.js"></script>
 </body>
 
 </html>

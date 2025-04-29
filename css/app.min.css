@@ -1122,7 +1122,7 @@ svg {
   width: 0.1388888889vw;
   height: 100%;
   opacity: 0.5;
-  background: #DFE6EC;
+  background: #CCE7FF;
   border-radius: 2.6388888889vw;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
@@ -1161,16 +1161,16 @@ svg {
   text-transform: uppercase;
   white-space: nowrap;
   opacity: 0.5;
-  color: #DFE6EC;
+  color: #CCE7FF;
 }
 .splide__link > svg {
   min-width: 1.3888888889vw;
   width: 1.3888888889vw;
   height: 1.3888888889vw;
-  color: #DFE6EC;
+  color: #CCE7FF;
 }
 .splide__link:hover {
-  color: #DFE6EC;
+  color: #CCE7FF;
 }
 @media screen and (hover: hover) {
   .splide__link:hover {
@@ -1203,10 +1203,44 @@ svg {
     height: 2.6666666667vw;
   }
 }
+@media screen and (max-width: 1023px) {
+  .splide__arrows {
+    display: none;
+  }
+}
+.splide__arrow {
+  top: -2.2222222222vw;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 1.3888888889vw;
+  width: 1.3888888889vw;
+  height: 1.3888888889vw;
+  background: #CCE7FF;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.splide__arrow > svg {
+  min-width: 0.625vw;
+  width: 0.625vw;
+  height: 0.625vw;
+  color: #CCE7FF;
+}
 
 .header {
   position: relative;
   z-index: 600;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 @media screen and (min-width: 1024px) {
   .header::before {
@@ -1217,6 +1251,8 @@ svg {
     bottom: 0;
     left: 0;
     z-index: -1;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
     display: block;
     width: 100%;
     height: 100%;
@@ -1518,7 +1554,7 @@ svg {
 .footer__navbar {
   position: relative;
   z-index: 1;
-  padding: 1.5277777778vw 0;
+  padding: 2.2222222222vw 0 1.5277777778vw;
 }
 .footer__navbar::after {
   content: "";
@@ -1555,7 +1591,7 @@ svg {
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .footer__navbar {
-    padding: 3.4274193548vw 0;
+    padding: 4.2338709677vw 0 3.4274193548vw;
   }
   .footer__navbar::before, .footer__navbar::after {
     height: 0.1344086022vw;
@@ -2064,7 +2100,7 @@ svg {
   min-width: 1.7361111111vw;
   width: 1.7361111111vw;
   height: 1.7361111111vw;
-  color: #DFE6EC;
+  color: #CCE7FF;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .footer-socnav__icon {
@@ -2090,7 +2126,7 @@ svg {
   font-weight: normal;
   letter-spacing: -0.0222222222vw;
   opacity: 0.5;
-  color: #DFE6EC;
+  color: #CCE7FF;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .footer-socnav__title {
@@ -4367,6 +4403,27 @@ svg {
           flex-direction: column;
   min-height: 100vh;
 }
+.wrapper.is--loading .header {
+  opacity: 0;
+  pointer-events: none;
+}
+.wrapper.is--loading .main::before {
+  opacity: 0;
+}
+.wrapper.is--loading .main__wrap, .wrapper.is--loading .main__canvas {
+  opacity: 0;
+  pointer-events: none;
+}
+.wrapper.is--loading .main__wrap {
+  -webkit-transform: translate(0, 10%);
+      -ms-transform: translate(0, 10%);
+          transform: translate(0, 10%);
+}
+.wrapper.is--loading .main__canvas {
+  -webkit-transform: translate(-50%, 10%);
+      -ms-transform: translate(-50%, 10%);
+          transform: translate(-50%, 10%);
+}
 .wrapper__content {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
@@ -4392,6 +4449,8 @@ svg {
   bottom: 0;
   left: 0;
   z-index: 1;
+  -webkit-transition: translateZ(0);
+  transition: translateZ(0);
   display: block;
   width: 100%;
   height: 100%;
@@ -4416,6 +4475,10 @@ svg {
   pointer-events: none;
   color: #F5F8FF;
   background-color: #060606;
+  background-image: url(../img/main-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 .main::before {
   content: "";
@@ -4431,6 +4494,8 @@ svg {
   border-radius: 50%;
   -webkit-filter: blur(250px);
           filter: blur(250px);
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .main::before {
@@ -4459,7 +4524,14 @@ svg {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  min-height: 100svh;
+  min-height: 100vh;
+  -webkit-transform: translate(0, 2%);
+      -ms-transform: translate(0, 2%);
+          transform: translate(0, 2%);
+  -webkit-transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 @media screen and (min-width: 1024px) {
   .main__wrap {
@@ -4469,12 +4541,12 @@ svg {
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .main__wrap {
-    padding-bottom: 5.376344086vw;
+    padding-bottom: 18.8172043011vw;
   }
 }
 @media screen and (max-width: 743px) {
   .main__wrap {
-    padding-bottom: 10.6666666667vw;
+    padding-bottom: 37.3333333333vw;
   }
 }
 .main__logotype {
@@ -4529,6 +4601,10 @@ svg {
           transform: translate(-50%, 0);
   width: 100%;
   pointer-events: none;
+  -webkit-transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 .main__canvas > * {
   position: absolute;
