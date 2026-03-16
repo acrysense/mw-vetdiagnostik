@@ -474,7 +474,7 @@
 	<!-- end of menu -->
 	<!-- feedback modals -->
 	<div class="feedback-modal scroll-fixed" id="feedback-modal">
-		<div class="feedback-modal__wrap">
+		<div class="feedback-modal__wrap" data-lenis-prevent data-lenis-prevent-wheel data-lenis-prevent-touch>
 			<button class="feedback-modal__close" aria-label="Закрыть">
 				<svg>
 					<use xlink:href="img/sprite.svg#icon-close"></use>
@@ -492,11 +492,13 @@
 						<button class="feedback-modal-tabs__tab">Владельцам питомцев</button>
 					</li>
 				</ul>
-				<div class="feedback-modal-tabs__holder">
+				<div class="feedback-modal-tabs__holder is--active">
 					<div class="feedback-modal__wrapper">
-						<picture class="feedback-modal__img">
-							<img src="img/feedback-modal-01.png" alt="Image">
-						</picture>
+						<div class="feedback-modal__img">
+							<video loop autoplay muted playsinline>
+								<source src="video/feedback-modal-01.mp4" type="video/mp4">
+							</video>
+						</div>
 						<div class="feedback-modal__body">
 							<form action="#" class="feedback-modal-form feedback-modal__form">
 								<div class="feedback-modal-form__main">
@@ -557,9 +559,11 @@
 				</div>
 				<div class="feedback-modal-tabs__holder">
 					<div class="feedback-modal__wrapper">
-						<picture class="feedback-modal__img">
-							<img src="img/feedback-modal-02.png" alt="Image">
-						</picture>
+						<div class="feedback-modal__img">
+							<video loop autoplay muted playsinline>
+								<source src="video/feedback-modal-02.mp4" type="video/mp4">
+							</video>
+						</div>
 						<div class="feedback-modal__body">
 							<form action="#" class="feedback-modal-form feedback-modal__form">
 								<div class="feedback-modal-form__main">
@@ -642,9 +646,11 @@
 				</div>
 				<div class="feedback-modal-tabs__holder">
 					<div class="feedback-modal__wrapper">
-						<picture class="feedback-modal__img">
-							<img src="img/feedback-modal-03.png" alt="Image">
-						</picture>
+						<div class="feedback-modal__img">
+							<video loop autoplay muted playsinline>
+								<source src="video/feedback-modal-03.mp4" type="video/mp4">
+							</video>
+						</div>
 						<div class="feedback-modal__body">
 							<form action="#" class="feedback-modal-form feedback-modal__form">
 								<div class="feedback-modal-form__main">
